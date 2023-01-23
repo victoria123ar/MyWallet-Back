@@ -10,7 +10,6 @@ import { validacaoTransacao } from "../middlewares/transactionMiddlewares.js";
 const router = Router();
 
 router.use(validaçãoAutenticacao);
-router.post("/nova-entrada", validacaoTransacao, criarTransacao);
-router.get("/nova-saida", encontrarTransacao);
-router.get("/transacoes",transacoes);
+router.post("/transacoes", validacaoTransacao, criarTransacao);
+router.get("/transacoes", encontrarTransacao, transacoes);
 export default router;
